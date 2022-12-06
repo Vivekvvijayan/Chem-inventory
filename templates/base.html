@@ -41,7 +41,7 @@
         </a>
         <span class="px-4 py-1 rounded-2xl text-gray-900 font-semibold">
           <i
-            class="fa-solid fa-user-tie p-2 text-white bg-slate-400 rounded-full mr-1"
+            class="fa-solid fa-user-tie p-2 text-white bg-gray-400 rounded-full mr-1"
           ></i>
           {{user.username}}
         </span>
@@ -52,9 +52,9 @@
       <div
         class="sidebar justify-left overflow-hidden w-[25%] bg-gradient-to-r from-slate-900 via-black-900 to-slate-900 h-screen p-4 overflow-hidden"
       >
-        <div class="flex flex-col">
+        <div class="flex flex-col ">
           <ul
-            class="text-white font-semibold text-xl flex flex-col h-[300px] mt-5 justify-around"
+            class="text-white font-semibold text-xl flex flex-col h-[350px] mt-5 justify-around"
           >
             <li
               class="hover:text-zinc-400 hover:bg-white p-2 flex justify-start items-center rounded-lg"
@@ -101,11 +101,12 @@
               >
             </li>
           </ul>
+          <p class="text-light text-xs text-white italic text-center mt-5">Product version : 1.0.0</p>
+          <!-- <p class="text-light text-xs text-white italic text-center mt-5">Developed By Department Of Computer Science</p> -->
         </div>
       </div>
 
       <!-- side bar  -->
-
       <div class="mt-[60px] h-auto pb-0 w-[100%] p-3">
         {% block body %} {% endblock %}
       </div>

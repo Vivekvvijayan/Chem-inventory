@@ -4,7 +4,7 @@
     <form action="{% url 'organic:search' %}" method="" class="">
         {% csrf_token %}
 
-      <input type="text" class="form-control " name="query" placeholder="search in {{catagoryname}}..."
+      <input type="text" class="form-control  w-[300px]" name="query" placeholder="search in {{catagoryname}}..."
       aria-label="Recipient's username" aria-describedby="button-addon2" required>
   <button class="btn btn-outline-secondary mt-3" type="submit" id="button-addon2">search</button>
 
@@ -12,14 +12,14 @@
     {% elif catagoryname == 'inorganic' %}
     <form action="{% url 'inorganic:search' %}" method="">
         {% csrf_token %}
-        <input type="text" class="form-control" name="query" placeholder="search in {{catagoryname}}..."
+        <input type="text" class="form-control w-[300px]" name="query" placeholder="search in {{catagoryname}}..."
             aria-label="Recipient's username" aria-describedby="button-addon2" required>
         <button class="btn btn-outline-secondary mt-3" type="submit" id="button-addon2">search</button>
     </form>
     {% elif catagoryname == 'solvents' %}
     <form action="{% url 'solvents:search' %}" method="">
         {% csrf_token %}
-        <input type="text" class="form-control" name="query" placeholder="search in {{catagoryname}}..."
+        <input type="text" class="form-control w-[300px]" name="query" placeholder="search in {{catagoryname}}..."
             aria-label="Recipient's username" aria-describedby="button-addon2" required>
         <button class="btn btn-outline-secondary mt-3" type="submit" id="button-addon2">search</button>
     </form>
@@ -31,6 +31,9 @@
         <div class="overflow-auto">
           <table class="min-w-full">
             <thead class="bg-white border-b">
+              {% if elems|length == 0 %}
+            <p class="text-center text-slate-600">No items available</p>
+              {% else %}
               <tr>
                 <th scope="col" class="text-sm font-medium text-red-600 px-6 py-4 text-left">
                   No
@@ -99,7 +102,7 @@
              
               </tr>
              {% endfor %}
-           
+           {% endif %}
             </tbody>
           </table>
         </div>
